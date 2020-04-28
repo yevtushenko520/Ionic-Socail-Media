@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+<ion-searchbar
+
+[showCancelButton]="shouldShowCancel"
+
+placeholder="Saerch for people, jobs, and more..."
+>
+</ion-searchbar>
+
+</ion-navbar>
+</ion-header>
+
+<ion-content style="background: grey;">
+ 
+
+
+  <ion-list *ngIf="items == null " text-center>
+
+    
+    <button *ngIf="items == null" (click)="moveToLogin()" style=" background-color: #002d60;margin:20px;" ion-button round>Create new group</button>
+  </ion-list>
+
+  <ion-list *ngIf="items != null">
+
+    <ion-col *ngFor="let item of items"  no-padding>
+
+                    <ion-card (click)="moveToWish(item)">
+
+                        <ion-item>
+                          <ion-avatar item-start>
+                           <img src="http://mekooshar.appvilo.com/public/img/{{item.image}}">
+                          </ion-avatar>
+                    <h2>{{item.name}}</h2>
+                         <p>{{item.location}} | {{item.time}} | {{item.date}}</p>
+                        </ion-item>
+                      
+                 
+                        <ion-card-content *ngIf="item.description != null" [innerHtml]="(item.description | slice:0:150) +(item.description.length > 150 ? '...' : '') ">
+                         
+                        </ion-card-content>
+                      
+                     
+                      
+                        <ion-row>
+                            <ion-col>
+                              <button ion-button icon-start clear small>
+                                <ion-icon name="thumbs-up"></ion-icon>
+                                <div>Like</div>
+                              </button>
+                            </ion-col>
+                            <ion-col>
+                              <button ion-button icon-start clear small>
+                                  <ion-icon name="thumbs-down"></ion-icon>
+                                <div>Dislike</div>
+                              </button>
+                            </ion-col>
+                            
+                          </ion-row>
+                          
+                      </ion-card>
+
+                    </ion-col>
+
+  </ion-list>
+</ion-content>

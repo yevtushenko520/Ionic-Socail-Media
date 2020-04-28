@@ -1,0 +1,18 @@
+page-payment {
+    ion-navbar{
+        background: $black !important; 
+        color: #fff;
+    }
+    .title{
+        color: #fff;
+    }
+    .toolbar .searchbar-ios .searchbar-input{
+        background-color: #fff;
+    }
+    .list span{
+        border: 0px;
+    }
+    .toolbar-title{
+        color: #fff;
+    }
+}

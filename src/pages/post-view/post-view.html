@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-navbar>
+  
+    <ion-title >Post Details</ion-title>
+
+<ion-buttons end (click)="goToMes()"> <button ion-button item-right  style="color: #fff;"> <ion-icon name="build"></ion-icon></button> </ion-buttons>
+<ion-buttons end (click)="delete()"> <button ion-button item-right  style="color: #fff;"> <ion-icon name="trash"></ion-icon> </button> </ion-buttons>
+
+</ion-navbar>
+</ion-header>
+
+<ion-content style="background: grey;">
+
+
+
+  
+
+                      <ion-card>
+
+                          <ion-item>
+                            <ion-avatar item-start>
+                             <img src="http://mekooshar.appvilo.com/public/img/{{ids.user_image}}">
+                            </ion-avatar>
+                      <h2>{{ids.name}}</h2>
+                           <p>{{ids.user_status}}</p>
+                          </ion-item>
+                        
+                          <ion-item *ngIf="ids?.post_files?.length > 0" id="joj">
+                              <div *ngFor="let file of ids.post_files; ">
+                                 <div class="square" *ngIf="file.image != null">
+                                     <div class="content">
+                                     
+                                         <img class="rs" *ngIf="file.image != null" src="http://mekooshar.appvilo.com/public/images/{{file.image}}"/>
+                                        
+                                     </div>
+                                 </div>
+ 
+                                 <a style="white-space: normal;" *ngIf="file.file != null" href="http://mekooshar.appvilo.com/public/images/{{file.file}}">
+                                   {{file.file}}</a>
+ 
+                              </div>
+                            
+                         
+                         </ion-item>
+                        
+                          <ion-card-content *ngIf="ids.text != null" [innerHtml]="ids.text ">
+                           
+                          </ion-card-content>
+                        
+                       
+                       
+                        
+                            
+                        </ion-card>
+
+                        <ion-list>
+                          <ion-item>
+                            <p>Comments</p>
+                          </ion-item>
+
+                          <ion-item *ngFor="let item of items">
+                            <ion-avatar item-start (click)="moveToWish(item)">
+                              <img src="http://mekooshar.appvilo.com/public/img/{{item.image}}">
+                            </ion-avatar>
+                            
+                            <p (click)="moveToWish(item)">{{item.name}}</p>
+                            <h3>{{item.text}}</h3>
+                          </ion-item>
+                          </ion-list>
+
+                          <ion-footer no-border style="height:55px;">
+  <div class="input-wrap">
+   
+    <textarea #chat_input
+              placeholder="Write comment"
+              [(ngModel)]="editorMsg"
+             >
+    </textarea>
+    <button ion-button clear icon-only item-right (click)="sendCom()">
+      <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+    </button>
+  </div>
+ 
+</ion-footer>
+
+</ion-content>

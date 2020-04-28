@@ -1,0 +1,7 @@
+{
+  "name": "mekooshar",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

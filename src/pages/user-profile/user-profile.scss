@@ -1,0 +1,70 @@
+page-user-profile {
+    ion-navbar{
+        background: $black !important; 
+    }
+    .toolbar .searchbar-ios .searchbar-input{
+        background-color: #fff;
+    }
+    .list span{
+        border: 0px;
+    }
+
+    .user-photo ion-avatar {
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+      }
+    
+      .profile-item {
+  text-align: center;
+}
+
+.profile-picture {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  padding: 3px;
+  border-radius: 100%;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin: 0 auto;
+  width: 128px;
+  height: 128px;
+  overflow: hidden;
+}
+
+.profile-picture img {
+  width: 128px;
+  border-radius: 100%;
+}
+
+.profile-name {
+  padding-top: 20px;
+  font-size: x-large !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+  
+    .img_prof{
+      background-color: #fff;
+      
+    }
+
+    
+
+    .list {
+      padding: 5px 0;
+      padding-top: 0px;
+  }
+
+  .goga{
+    display: block;
+  margin-left: auto;
+  margin-right: auto ;
+  }
+
+  .select{
+    border-bottom-width: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: grey;
+}
+}

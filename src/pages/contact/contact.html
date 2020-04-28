@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+    
+            <ion-buttons left (click)="goProfile()"> <button ion-button item-right  style="color: #fff;">  <img src="http://mekooshar.appvilo.com/public/img/1565104161.png" style="
+              width: 30px;
+              border: solid 0.5px;
+              border-radius: 45%;
+          " class="button button-icon button-clear" menu-toggle="left"> </button> </ion-buttons>
+
+  <ion-searchbar
+ 
+  [showCancelButton]="shouldShowCancel"
+ 
+  placeholder="Saerch for people, jobs, and more..."
+  >
+</ion-searchbar>
+<!--<ion-buttons end (click)="goToMes()"> <button ion-button item-right  style="color: #fff;"> <ion-icon name='ios-paper-plane'></ion-icon> </button> </ion-buttons> -->
+
+</ion-navbar>
+</ion-header> 
+
+<ion-content style="background: grey;">
+  
+
+<ion-card style="margin-top: 0px;width: 100%;border: 0px;margin-left: 0px;margin-right: 0px;">
+
+  <div *ngFor="let item of items">
+    <ion-item (click)="openChat(item.id)">
+        <ion-avatar item-start>
+          <img *ngIf="item.image ==null" src="http://mekooshar.appvilo.com/public/img/default-user.png">
+          <img *ngIf="item.image !=null" src="http://mekooshar.appvilo.com/public/img/{{item.image}}">
+        </ion-avatar>
+        <h2>{{item.name}}</h2>
+       
+       
+      <!--  <ion-badge item-end>3</ion-badge>-->
+      </ion-item>
+    
+     
+       
+
+              </div>
+      
+</ion-card>     
+
+
+</ion-content>

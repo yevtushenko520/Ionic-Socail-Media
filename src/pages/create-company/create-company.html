@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons >
+        
+      </ion-buttons>
+      <ion-title>Create Company</ion-title>
+  
+    
+    </ion-navbar>
+  </ion-header>
+
+  
+  
+  <ion-content >
+
+    <ion-list style="background-color: #fff;" >   
+            
+    
+    
+
+          
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company name *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.title" ></ion-input>
+        
+      </ion-item>
+      
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company phone *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.phone" ></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company email *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.email" ></ion-input>
+        
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company location *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.location" ></ion-input>
+        
+      </ion-item>
+
+      
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company weblink *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.location" ></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company industry *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.location" ></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Company text *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.text" ></ion-input>
+        
+      </ion-item>
+
+
+          <button ion-button full (click)="save()">Create</button>
+          
+
+
+              
+            
+            <ion-item>
+
+              
+            </ion-item>
+
+    </ion-list>
+  </ion-content>
+  

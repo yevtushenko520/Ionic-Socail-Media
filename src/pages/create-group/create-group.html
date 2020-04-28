@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons >
+        
+      </ion-buttons>
+      <ion-title>Create Group</ion-title>
+  
+    
+    </ion-navbar>
+  </ion-header>
+
+  
+  
+  <ion-content >
+
+    <ion-list style="background-color: #fff;" >   
+            
+    
+    
+
+          
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Group name *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.title" ></ion-input>
+        
+      </ion-item>
+      
+     
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Group text *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.text" ></ion-input>
+        
+      </ion-item>
+
+
+          <button ion-button full (click)="save()">Create</button>
+          
+
+
+              
+            
+            <ion-item>
+
+              
+            </ion-item>
+
+    </ion-list>
+  </ion-content>
+  

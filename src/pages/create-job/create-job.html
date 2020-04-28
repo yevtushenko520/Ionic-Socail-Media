@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons >
+        
+      </ion-buttons>
+      <ion-title>Create Job</ion-title>
+  
+    
+    </ion-navbar>
+  </ion-header>
+
+  
+  
+  <ion-content >
+
+    <ion-list style="background-color: #fff;" >   
+            
+    
+    
+
+          
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Job name *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.title" ></ion-input>
+        
+      </ion-item>
+      
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Job phone *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.phone" ></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Job email *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.email" ></ion-input>
+        
+      </ion-item>
+  
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Job location *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.location" ></ion-input>
+        
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Job text *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.text" ></ion-input>
+        
+      </ion-item>
+
+
+          <button ion-button full (click)="save()">Create</button>
+          
+
+
+              
+            
+            <ion-item>
+
+              
+            </ion-item>
+
+    </ion-list>
+  </ion-content>
+  

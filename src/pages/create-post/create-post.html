@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+      <ion-buttons >
+        
+      </ion-buttons>
+      <ion-title>Create Post</ion-title>
+  
+    
+    </ion-navbar>
+  </ion-header>
+
+  
+  
+  <ion-content >
+
+    <ion-list style="background-color: #fff;" >   
+            
+    
+      <img  src = "{{base64Image}}" />
+      <ion-item>
+        <button  ion-button icon-end (click)="openModal()">
+           Image
+            <ion-icon name="cloud-download"></ion-icon>
+          </button>
+
+        </ion-item>
+          
+      <ion-item>
+        <ion-icon name="ios-person" ></ion-icon>
+        <ion-label  color="primary" stacked>
+         Post *
+        </ion-label>
+          <ion-input type="text" [(ngModel)]="loginData.title" ></ion-input>
+        
+      </ion-item>
+      
+     
+
+  
+
+
+          <button ion-button full (click)="save()">Create</button>
+          
+
+
+              
+            
+            <ion-item>
+
+              
+            </ion-item>
+
+    </ion-list>
+  </ion-content>
+  

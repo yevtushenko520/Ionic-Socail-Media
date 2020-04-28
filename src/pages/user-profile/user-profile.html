@@ -1,0 +1,173 @@
+<ion-header>
+  <ion-navbar>
+<ion-searchbar
+
+[showCancelButton]="shouldShowCancel"
+
+placeholder="Saerch for chats..."
+>
+</ion-searchbar>
+
+
+</ion-navbar>
+</ion-header>
+
+<ion-content style="background: grey;">
+  
+  <ion-list >
+     
+      <ion-item class="profile-item" >
+          <div class="profile-picture big-profile-picture">
+            <img src="http://mekooshar.appvilo.com/public/img/{{loginData.image}}">
+          </div>
+          <h2 class="profile-name dark">{{loginData.name}}</h2>
+          <div class="profile-info">{{loginData.status}}</div>
+
+          <ion-grid *ngIf=" status =='1'">
+            <ion-row>
+              <ion-col>
+                <button ion-button (click)="delete(ids)">Delete</button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="secondary">Send message</button>
+              </ion-col>
+            </ion-row>
+
+            </ion-grid>
+            <ion-grid *ngIf=" status !='1'">
+              <button ion-button (click)="sendFriends(ids)">Connection</button>
+  
+              </ion-grid>
+        </ion-item>
+          
+      
+
+        <ion-card>
+
+            <ion-card-header>
+                Summary 
+            </ion-card-header>
+          
+            <ion-card-content>
+              {{loginData.summary}}
+            </ion-card-content>
+          
+          </ion-card>
+          <ion-card>
+
+              <ion-card-header>
+                  Experience 
+              </ion-card-header>
+            
+              <ion-card-content>
+                {{loginData.experience}} </ion-card-content>
+            
+            </ion-card>
+
+            <ion-card>
+
+                <ion-card-header>
+                    Skills 
+                </ion-card-header>
+              
+                <ion-card-content>
+                    <ion-item>
+                      User has not entered data in this field
+                      </ion-item>
+                </ion-card-content>
+              
+              </ion-card>
+
+              <ion-card>
+
+                  <ion-card-header>
+                      Educations 
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                    {{loginData.educations}}
+  
+                  </ion-card-content>
+                
+                </ion-card>
+
+              <ion-card>
+
+                  <ion-card-header>
+                      Languages 
+                  </ion-card-header>
+                
+                  <ion-card-content>
+                      <ion-item>
+                        User has not entered data in this field
+                        </ion-item>
+                  </ion-card-content>
+                
+                </ion-card>
+    
+
+  
+                <ion-list *ngIf="items != null">
+            
+                  <ion-col *ngFor="let item of items"  no-padding>
+          
+                                  <ion-card >
+          
+                                      <ion-item (click)="moveToWish(item)">
+                                        <ion-avatar item-start>
+                                         <img src="http://mekooshar.appvilo.com/public/img/{{item.user_image}}">
+                                        </ion-avatar>
+                                  <h2>{{item.name}}</h2>
+                                       <p>{{item.user_status}}</p>
+                                      </ion-item>
+                                    
+                                     <!-- <img src="assets/imgs/nin-live.png">-->
+                                     <ion-item *ngIf="item?.post_files?.length > 0" id="joj">
+                                       <div *ngFor="let file of item.post_files; " (click)="moveToWish(item)">
+                                          <div class="square" *ngIf="file.image != null">
+                                              <div class="content">
+                                              
+                                                  <img class="rs" *ngIf="file.image != null" src="http://mekooshar.appvilo.com/public/images/{{file.image}}"/>
+                                                 
+                                              </div>
+                                          </div>
+          
+                                          <a style="white-space: normal;" *ngIf="file.file != null" href="http://mekooshar.appvilo.com/public/images/{{file.file}}">
+                                            {{file.file}}</a>
+          
+                                       </div>
+                                     
+                                  
+                                  </ion-item>
+                                    
+                                      <ion-card-content (click)="moveToWish(item)" *ngIf="item.text != null" [innerHtml]="(item.text | slice:0:150) +(item.text.length > 150 ? '...' : '') ">
+                                       
+                                      </ion-card-content>
+                                    
+                                   
+                                      <ion-row>
+                                        <ion-col>
+                                          <button ion-button icon-start clear small (click)="like(item)">
+                                            <ion-icon *ngIf=" item.like =='1'" name="thumbs-up" color="secondary"></ion-icon>
+                                            <ion-icon *ngIf=" item.like !='1' || item.like=='null'" name="thumbs-up" ></ion-icon>
+                                            <div>Like</div>
+                                          </button>
+                                        </ion-col>
+                                        <ion-col>
+                                          <button ion-button icon-start clear small (click)="dislike(item)">
+                                              <ion-icon *ngIf=" item.like !='2'" name="thumbs-down"  ></ion-icon>
+                                            <ion-icon *ngIf=" item.like =='2' || item.like=='null'" name="thumbs-down"  color="danger"></ion-icon>
+                                            <div>Dislike</div>
+                                          </button>
+                                        </ion-col>
+                                       
+                                      </ion-row>
+                                        
+                                    </ion-card>
+          
+                                  </ion-col>
+          
+                </ion-list>
+           
+  </ion-list>
+</ion-content>
